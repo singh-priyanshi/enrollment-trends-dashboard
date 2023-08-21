@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Dashboard</title>
+    <!-- Include necessary Plotly.js library -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Enrollment Trends Dashboard</h1>
+    <!-- Render the Plotly chart using the JSON data -->
+    <div id="chart"></div>
+    <script>
+        var chartJson = {{ chart_json | safe}};
+		console.log(chartJson);
+        Plotly.newPlot('chart', chartJson.data, chartJson.layout);
+    </script>
+</body>
+</html>
